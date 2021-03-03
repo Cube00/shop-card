@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    outline: none;
+    border: none;
+    background: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background-color: #f1f1f1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wall {
+    max-width: 1000px;
+    width: 100%;
+    padding: 10px;
+    margin: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card {
+    background-color: #fff;
+    border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    border-bottom: 1px solid#f1f1f1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name,
+.type,
+.price {
+    width: 150px;
+    margin: 0 90px 0 0;
+}
+
+.quantity span {
+    padding: 5px 10px;
+    background-color: #f1f1f1;
+    border-radius: 6px;
+}
+
+.total {
+    margin-top: 15px;
+}
+
+.decreese,
+.increase {
+    cursor: pointer;
+    margin-left: 25px;
 }
