@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: #f1f1f1;
+    background-color: #8d99ae;
 }
 
 .wall {
@@ -21,7 +21,7 @@ body {
 }
 
 .card {
-    background-color: #fff;
+    background-color: #edf2f4;
     border-radius: 10px;
 }
 
@@ -29,7 +29,11 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 25px;
-    border-bottom: 1px solid#f1f1f1;
+    border-bottom: 1px solid#d2d4d8;
+}
+
+.item:last-child {
+    border-bottom: none;
 }
 
 .info {
@@ -42,15 +46,22 @@ body {
 .price {
     width: 150px;
     margin: 0 90px 0 0;
+    color: #2b2d42;
 }
 
 .quantity span {
     padding: 5px 10px;
-    background-color: #f1f1f1;
+    background-color: #2b2d42;
     border-radius: 6px;
+    color: #fff;
 }
 
 .total {
+    padding: 20px;
+    font-size: 22px;
+    text-align: center;
+    color: #fff;
+    background-color: #2b2d42;
     margin-top: 15px;
 }
 
@@ -58,4 +69,47 @@ body {
 .increase {
     cursor: pointer;
     margin-left: 25px;
+}
+
+.delete {
+    font-size: 14px;
+    margin-left: 30px;
+    background: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.delete:hover {
+    color: #ef233c;
+}
+
+.clear {
+    float: right;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background: #ef233c;
+    cursor: pointer;
+}
+
+header {
+    background-color: #2b2d42;
+}
+
+header ul {
+    width: 1000px;
+    margin: auto;
+    padding: 20px;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.logo {
+    float: left;
+    font-size: 25px;
+    color: #787994;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
 }

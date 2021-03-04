@@ -1,46 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import uuid from "react-uuid";
 import Header from "./components/Header";
 import List from "./components/List";
-
-const cardItems = [
-  {
-    id: uuid(),
-    type: "Video Board",
-    name: "GTX 640",
-    price: 500,
-    quentity: 1,
-    cost: 500,
-  },
-  {
-    id: uuid(),
-    type: "Processor",
-    name: "i5",
-    price: 900,
-    quentity: 1,
-    cost: 900,
-  },
-  {
-    id: uuid(),
-    type: "Ram",
-    name: "16GB",
-    price: 200,
-    quentity: 1,
-    cost: 200,
-  },
-  {
-    id: uuid(),
-    type: "Video Board",
-    name: "GTX 640",
-    price: 500,
-    quentity: 1,
-    cost: 500,
-  },
-];
+import data from "./data";
 
 function App() {
-  const [card, setCard] = useState(cardItems);
+  const [card, setCard] = useState(data);
   const [inc, setInc] = useState(false);
   const [dec, setDec] = useState(false);
 
@@ -55,6 +20,7 @@ function App() {
     setInc(true);
     setCard(newItem);
   };
+
   const decrese = (id) => {
     const newItem = card.map((item) => {
       let { quentity, price, cost } = item;
@@ -71,11 +37,23 @@ function App() {
     setCard(newItem);
   };
 
+  const handleDelete = (id) => {
+    const filterItem = card.filter((item) => {
+      return item.id !== id;
+    });
+    setCard(filterItem);
+  };
+
   return (
     <>
       <Header />
       <div className="wall">
-        <List card={card} increase={increase} decrese={decrese} />
+        <List
+          card={card}
+          increase={increase}
+          decrese={decrese}
+          handleDelete={handleDelete}
+        />
         <div className="total">
           Total:
           <span>
@@ -91,6 +69,14 @@ function App() {
             }, 0)}
           </span>
         </div>
+        <button
+          className="clear"
+          onClick={() => {
+            setCard([]);
+          }}
+        >
+          Clear
+        </button>
       </div>
     </>
   );

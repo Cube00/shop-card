@@ -1,5 +1,5 @@
 import Item from "./Item";
-const List = ({ card, increase, decrese }) => {
+const List = ({ card, increase, decrese, handleDelete }) => {
   return (
     <>
       <div className="card">
@@ -10,6 +10,7 @@ const List = ({ card, increase, decrese }) => {
               key={item.id}
               increase={increase}
               decrese={decrese}
+              handleDelete={handleDelete}
             />
           );
         })}

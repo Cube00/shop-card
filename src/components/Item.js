@@ -1,7 +1,8 @@
 import { AiOutlinePlus } from "react-icons/ai";
 import { AiOutlineMinus } from "react-icons/ai";
+import { MdDelete } from "react-icons/md";
 
-const Item = ({ item, increase, decrese }) => {
+const Item = ({ item, increase, decrese, handleDelete }) => {
   const { id, name, type, price, cost, quentity } = item;
   return (
     <>
@@ -30,6 +31,15 @@ const Item = ({ item, increase, decrese }) => {
             onClick={() => increase(id)}
           >
             <AiOutlinePlus />
+          </button>
+          <button
+            onClick={() => {
+              handleDelete(id);
+            }}
+            className="delete"
+            aria-label="delete"
+          >
+            <MdDelete />
           </button>
         </div>
       </div>
